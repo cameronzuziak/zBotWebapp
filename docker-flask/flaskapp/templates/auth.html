@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+{% endblock %}
+
+{% block body %}
+<div class="containerMain">
+    <div class="titleContainer">    
+        <span class="mainTitle">Welcome To zBot</span>
+    </div>
+    <div class="containerLogin">
+        <div class="Pic"> 
+            <img src="/static/media/img-01.png" alt="IMG">
+        </div>
+        <form class="loginForm" method="POST" action="#">
+            <span class="loginTitle">
+                {{ title }}
+            </span>
+            <div class="inputContainer" data-validate="Alphanumeric username required">
+                <input class="inputField" type="number" name="code" id="code" placeholder="2FA Code">
+            </div>
+            <div class="containerBtn">
+                <input type="submit" name="submit" class="loginBtn" value="VERIFY">
+            </div>
+            </br>
+        </form>
+    </div>
+</div>
+{% endblock %}

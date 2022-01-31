@@ -1,0 +1,148 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script src="https://unpkg.com/lightweight-charts/dist/lightweight-charts.standalone.production.js"></script>
+
+<script type="text/javascript">
+    google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+    function drawChart() {
+        var box = document.getElementById('piechart').offsetWidth;
+        var data = google.visualization.arrayToDataTable([
+        ['Asset', 'USD Value'],
+        {% for item in info[1] %}
+            ['{{item['asset']}}', {{item['value']}}],
+        {% endfor %}
+        
+        ]);
+  
+        var options = {
+            backgroundColor: 'transparent',
+            colors: [
+                '#0AEFFF',
+                '#001314', 
+                '#CCC900',
+                '#00858F',
+                '#FFFF0A', 
+                '#FFFF70', 
+                '#70FFFF'
+            ],
+            width: box,
+            chartArea:{left:'5%', width:'110%',height:'100%'},
+            legend:{position:'center', alignment:'center', textStyle: {
+                color: '#FFFFFF',
+                fontName: 'Ubuntu'
+            }}
+        };
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+        chart.draw(data, options);
+    }
+</script>
+{% endblock %}
+
+
+{% block body %}
+<div class="topnav">
+    <a class="active" href="#">Home.</a>
+    <a href="/settings">Settings </a>
+    <a href="/about">About </a>
+</div>
+<div class="containerMain">
+    <div class="gridLayout">
+        <div class="candleStick">    
+            <div id="kchart"></div>
+            <script src="{{ url_for('static', filename='js/chart.js') }}"></script>
+            </br>
+            <div class="chrtSettings">     
+                <select class="inputField" type="text" id="coin_pair" name="coinpairing" value="BTCUSDT">
+                    <option value="BTCUSD">BTC/USD</option>
+                    <option value="ETHUSD">ETH/USD</option>
+                    <option value="ADAUSD">ADA/USD</option>
+                    <option value="MANAUSD">MANA/USD</option>
+                    <option value="LTCUSD">LTC/USD</option>
+                    <option value="BNBUSD">BNB/USD</option>
+                    <option value="VETUSD">VET/USD</option>
+                </select>        
+                <select class="inputField" type="text" id="timeInterval" name="timeInterval" value="1m">
+                    <option value="1m">1 Minute</option>
+                    <option value="3m">3 Minute</option>
+                    <option value="5m">5 Minute</option>
+                    <option value="15m">15 Minute</option>
+                    <option value="30m">30 Minute</option>
+                    <option value="1h">1 Hour</option>
+                    <option value="4h">4 Hour</option>
+                    <option value="6h">6 Hour</option>
+                    <option value="12h">12 Hour</option>
+                    <option value="1d">1 Day</option>
+                    <option value="1w">1 Week</option>
+                    <option value="1M">1 Month</option>
+                </select>
+            </div>     
+            <script>
+                $('#coin_pair').change(function(){paint_chart(this.value);});
+                $('#timeInterval').change(function(){paint_chart(this.value);});      
+            </script>
+            
+        </div>   
+
+        <div class="containerBot">
+            <div class="loginForm" id="bot" >
+
+                <div class="Pic"> 
+                    <img src="/static/media/zbot.png" alt="IMG">
+                </div>
+
+                <span class="balance"> 
+                Deploy Bot
+                </span>
+                <div class="botform">
+                    <select class="botInputField" type="text" id="coin_pair_bot" name="coinpairing" value="BTCUSDT">
+                        <option value="ADA/USDT">ADA/USDT</option>
+                        <option value="VET/USDT">VET/USDT</option>
+                    </select> 
+
+                    <input class="botInputField" type="number" name="RSI_Buy" id="RSI_buy" placeholder="RSI Buy">
+                    <input class="botInputField" type="number" name="RSI_Sell" id="RSI_sell" placeholder="RSI Sell">
+                    <select class="botInputField" type="text" id="in_position" name="in_position" value="BTCUSDT">
+                        <option value="1">True</option>
+                        <option value="0">False</option>
+                    </select> 
+                    <input class="botInputField" type="password" name="pass" id="pass" placeholder="Password">
+                    
+                    <div class="containerBtn">
+                        <button type="button" class="botBtn" value="Submit" onclick="bot_call();"> Submit </button>
+                    </div>
+                    </br>
+                </div>
+            </div>
+        </div>  
+
+        <div class="piechart" id="piechart"></div>
+ 
+        <div class="prtTble"> 
+            <span class="balance">Account Balance: ${{info[0]}} </span>    
+            <table id="coins">
+                <tr>
+                <th>Asset</th>
+                <th>Amount</th>
+                <th>USD Value</th>
+                </tr>
+                {% for item in info[1] %}
+                <tr> 
+                    <td> {{item['asset']}} </td> 
+                    <td> {{item['amnt']}} </td>
+                    <td> $ {{item['value']}} </td>
+                </tr>
+                {% endfor %}
+            </table>    
+        </div> 
+
+
+    </div>
+
+
+</div>
+
+{% endblock %}

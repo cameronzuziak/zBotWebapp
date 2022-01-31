@@ -1,0 +1,39 @@
+
+/* Color pallete
+Yellows(dark to light)
+000000
+665000
+CCC900
+FFFF0A
+FFFF70
+FFFFFF
+
+Blues(dark to light)
+000000
+001314
+00858F
+0AEFFF
+70FFFF
+FFFFFF
+*/
+
+html { 
+    /*background: url(../media/background.jpg) no-repeat center center fixed; */
+    background-color: #001314;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2vh;
+  background-color: #00858F;
+  color: white;
+  text-align: center;
+  align-content: space-between;
+}

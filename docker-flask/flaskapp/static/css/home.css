@@ -1,0 +1,392 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@300&display=swap');
+/* Color pallete
+Yellows(dark to light)
+000000
+665000
+CCC900
+FFFF0A
+FFFF70
+FFFFFF
+
+Blues(dark to light)
+000000
+001314
+00858F
+0AEFFF
+70FFFF
+FFFFFF
+*/
+
+* {
+    margin: 0;
+    box-sizing:border-box;
+    font-family: Ubuntu;
+}
+
+
+.containerMain {
+    width: 100%;
+    height: fit-content;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    vertical-align: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 20px;
+    padding-bottom: 2vh;
+    flex-wrap: wrap;
+}
+
+
+.candleStick {
+    border-style: solid;
+    border-width: thin;
+    border-color: #CCC900;
+    border-radius: 20px;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    background-color: 001314;
+    margin: 10px;
+    width:100%;
+    flex: auto;
+}
+
+
+#kchart {
+    height: 45vh;
+}
+
+
+.gridlayout{
+    width: 90vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+
+.balance {
+    font-family: Ubuntu;
+    font-size: 25px;
+    width: 100%;
+    color: rgb(255, 255, 255);
+    line-height: 1.2;
+    text-align: center;
+    vertical-align: center;
+    display: table;
+    margin: auto 0px;
+
+}
+
+.inputField {
+    font-family: Ubuntu;
+    font-size: 15px;
+    line-height: 1.5;
+    color: #666;
+    display: block;
+    width: fit-content;
+    background: #70FFFF;
+    height: 40px;
+    border-radius: 20px;
+    padding-left: 5px;
+}
+
+
+.chrtSettings{
+    width: fit-content;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: none;
+}
+
+
+#coin_pair{
+    float: left;
+}
+
+
+#timeInterval{
+    float: right;
+}
+
+
+.mainTitle {
+    font-family: Ubuntu;
+    font-weight: bold;
+    font-size: 40px;
+    color: rgb(255, 255, 255);
+    line-height: 1.2;
+    text-align: center;
+    vertical-align: center;
+    width: 100%;
+    padding-top: 10%;
+    padding-bottom:50px
+}
+
+
+
+.piechart {
+    font-family: Ubuntu;
+    vertical-align: middle;
+    height: 30vh;
+    width:40vh;
+    border-style: solid;
+    border-width: thin;
+    border-color: #FFFF70;
+    border-radius: 20px;
+    margin: 10px;
+}
+ 
+.containerBot{
+    width: fit-content;
+    border-style: solid;
+    border-width: thin;
+    border-color: #FFFF70;
+    border-radius: 20px;
+    overflow: hidden;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding:10px;
+    justify-content: space-between;
+    margin: 10px;
+    float: inline-end;
+}
+
+.Pic {
+    width:250px;
+    display: none;
+}
+
+.Pic img {
+    max-width: 100%
+}
+
+.botInputField{
+    font-family: Ubuntu;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 1.5;
+    color: #fff;
+    text-transform: uppercase;
+    width: 100%;
+    height: 50px;
+    border-radius: 25px;
+    background: #36fdf3;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 4%;
+    -webkit-transition: all .4s;
+    -o-transition: all .4s;
+    -moz-transition: all .4s;
+    transition:all .4s
+}
+
+
+.botBtn {
+    font-family: Ubuntu;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 1.5;
+    color: #fff;
+    text-transform: uppercase;
+    width: 100%;
+    height: 50px;
+    border-radius: 25px;
+    background: #36fdf3;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 4%;
+    -webkit-transition: all .4s;
+    -o-transition: all .4s;
+    -moz-transition: all .4s;
+    transition:all .4s
+}
+
+
+.prtTble{
+    flex: auto;
+    overflow-y: auto;
+    border-style: solid;
+    border-width: thin;
+    border-color: #FFFF70;
+    border-radius: 20px;
+    min-width: 35vw;
+    height: 30vh;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: 10px;
+}
+
+
+#coins {
+    font-family: Ubuntu;
+    border-collapse: collapse;
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius:6px;
+    -moz-border-radius:6px;
+}
+  
+#coins td, #coins th {
+  text-align: center;
+  padding: 8px;
+  
+}
+
+#coins tr{
+    border-bottom: 1px solid #00858F;
+    background-color: #001314;
+    color: #fff;
+}
+
+#coins tr:hover {background-color: #ddd;}
+
+#coins th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #001314;
+  color: white;
+  border-top: none
+}
+
+#coins tr:last-child {
+    border-bottom: 1px solid #001314;
+}
+
+
+@media (max-width: 1310px) {
+    .containerBot{
+        width: fit-content;
+        border-style: solid;
+        border-width: thin;
+        border-color: #FFFF70;
+        border-radius: 20px;
+        overflow: hidden;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        padding:10px;
+        justify-content: space-between;
+        margin: 10px;
+        float: inline-end;
+        flex: auto;
+    }
+
+    .botForm{
+        vertical-align: middle;
+        width:35%;
+    }
+    
+    .Pic {
+        vertical-align: middle;
+        width:35%
+    }
+}
+
+@media (max-width: 992px) {
+
+    .piechart {
+        vertical-align: middle;
+    }
+
+}
+
+@media (max-width: 768px) {
+
+}
+
+@media (max-width: 576px) {
+    .titleContainer {
+        padding-top: 5vh;
+    }
+    
+    .mainTitle{
+        width:50%;
+        font-size: 30px;
+        padding-top: 4vh;
+    }
+
+    .containerMain{
+        padding-left: 5vw;
+        padding-right: 5vw;
+        padding-top: 0vh;
+    }
+
+}
+
+@media (max-width: 380px) {
+    .titleContainer{
+        padding-top: 2vh;
+    }
+    
+    .mainTitle{
+        width:50%;
+        font-size: 20px;
+        padding-top: 2vh;
+    }
+
+    .containerMain{
+        padding-left: 0vw;
+        padding-right: 0vw;
+        padding-top: 0vh;
+        border: none;
+        vertical-align: auto;
+    }
+    
+    .containerContent{
+        width: 100%;
+        border: none;
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+
+    .piechart{
+        width: 100%;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+
+    .prtTble{
+        width: 100%;
+    }
+
+    table{
+        width:100%;
+    }
+
+}
+

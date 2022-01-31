@@ -1,0 +1,2 @@
+# zBotFlaskBuild
+Front end and APIs of a webapp which allows users to algorithmically trade crypto currency using an RSI strategy. The site includes features such as live candlestick charts. pie charts of current holdings, and much more.

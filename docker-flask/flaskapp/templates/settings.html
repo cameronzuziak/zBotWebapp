@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+{% endblock %}
+
+{% block body %}
+<div class="topnav">
+    <a  href="/home">Home</a>
+    <a class="active" href="#">Settings. </a>
+    <a href="/about">About </a>
+</div>
+<div class="containerMain">
+    <div class="titleContainer">    
+        <span class="mainTitle">Account Settings</span>
+    </div>
+    <div class="containerLogin">
+        <div class="Pic"> 
+            <img src="/static/media/img-01.png" alt="IMG">
+        </div>
+        <form class="loginForm" method="POST" action="#">
+            <span class="loginTitle">
+               {{ title }}
+            </span>
+            <div class="inputContainer" data-validate="Alphanumeric username required">
+                <input class="inputField" type="password" name="api_key" id="api_key" placeholder="API Key">
+            </div>
+            <div class="inputContainer" data-validate="Alphanumeric username required">
+                <input class="inputField" type="password" name="sec_key" id="sec_key" placeholder="Secret Key">
+            </div>
+            <div class="inputContainer" data-validate="Password is required">
+                <input class="inputField" type="password" name="pass" id="pass" placeholder="Password">
+            </div>
+            
+            <div class="containerBtn">
+                <input type="submit" name="submit" class="loginBtn" value="Set Keys">
+            </div>
+            </br>
+        </form>
+    </div>
+</div>
+{% endblock %}

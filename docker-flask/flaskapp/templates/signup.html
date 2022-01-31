@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+{% endblock %}
+
+{% block body %}
+<div class="topnav">
+    <a href="/" >Login</a>
+    <a class="active" href="#">Sign-Up. </a>
+    <a href="/about">About </a>
+</div>
+<div class="containerMain">
+    <div class="titleContainer">    
+        <span class="mainTitle">Welcome To zBot</span>
+    </div>
+    <div class="containerLogin">
+        <div class="Pic"> 
+            <img src="/static/media/img-01.png" alt="IMG">
+        </div>
+        <form class="loginForm" method="POST" action=#>
+            <span class="loginTitle">{{ title }}</span>
+            <div class="inputContainer">
+                <input class="inputField" type="text" name="username" id="username" placeholder="Username" required>
+            </div>
+            <div class="inputContainer">
+                <input class="inputField" type="text" id="phone" name="phone" placeholder="Phone Number">
+                <script src="{{ url_for('static', filename='js/phone.js') }}"></script>
+            </div>
+            <div class="inputContainer">
+                <input class="inputField" type="password" name="pass" id="pass" placeholder="Password" required>
+            </div>
+            <div class="inputContainer">
+                <input class="inputField" type="password" name="confpass" id="confpass" placeholder="Confirm Password" required>
+            </div>
+            <div class="inputContainer">
+                <input class="inputField" type="password" name="betacode" id="betacode" placeholder="Beta Test Code" required>
+            </div>
+            <div class="containerBtn">
+                <input type="submit" name="submit" class="loginBtn" value="SEND">
+            </div>
+            <br>
+            <div style="font-family:helvetica"><p>Already a member? Login <a href="{{ url_for('index') }}"><b>here</b></a></p></div>
+        </form>
+    </div>
+</div>
+{% endblock %}

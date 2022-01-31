@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  flaskapp:
+    build: ./docker-flask
+    ports:
+      - "8000:8000"
+      - "3306:3306"
+    network_mode: bridge
+
+  nginx:
+    build: ./nginx
+    container_name: nginx
+    environment:
+      - SERVER_NAME=0.0.0.0
+    restart: always
+    network_mode: host
+    
+    

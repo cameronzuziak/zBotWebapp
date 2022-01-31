@@ -1,0 +1,24 @@
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>zBot Algo Trader</title>
+        <meta name="description" content="Login">
+        <meta name="author" content="cameron zuziak">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/navbar.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+        {% block head %}{% endblock %}
+
+    </head>
+
+    <body onload="paint_chart();">
+        {% block body %}{% endblock %}
+        <div class="footer">
+
+        </div>
+    </body>
+
+
+
+</html>
